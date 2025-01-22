@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solucionario</title>
+</head>
+<body>
+    <h1>Reportar un Problema</h1>
+    <form id="reportForm" enctype="multipart/form-data">
+        <textarea name="problem" placeholder="Describe el problema"></textarea>
+        <input type="file" name="file" />
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('reportForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/report', {
+                method: 'POST',
+                body: formData,
+            });
+            alert('Problema reportado');
+        };
+    </script>
+</body>
+</html>
