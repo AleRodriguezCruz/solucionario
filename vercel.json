@@ -1,11 +1,11 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs14.x"
+    "api/**/*.php": {
+      "runtime": "now-php@1.0.0"
     }
   },
   "routes": [
-    { "src": "/(.*)", "dest": "/api/index.js" }
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
